@@ -11,11 +11,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout do código
       - name: Checkout do código
         uses: actions/checkout@v4
 
-      # 2. Configuração do Java 21
       - name: Configurar Java 21
         uses: actions/setup-java@v4
         with:
@@ -23,19 +21,15 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      # 3. Compilação do projeto
       - name: Compilar projeto
         run: mvn compile
 
-      # 4. Execução dos testes unitários
       - name: Executar testes unitários
         run: mvn test
 
-      # 5. Geração do arquivo JAR
       - name: Gerar pacote JAR
         run: mvn package -DskipTests
 
-      # 6. Disponibilização do artefato para download
       - name: Upload do artefato JAR
         uses: actions/upload-artifact@v4
         with:
