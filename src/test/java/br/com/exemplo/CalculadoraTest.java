@@ -19,7 +19,7 @@ class CalculadoraTest {
     @DisplayName("Cenário 1: Deve somar dois números inteiros corretamente")
     void deveSomarDoisNumeros() {
         int resultado = calculadora.somar(10, 5);
-        assertEquals(15, resultado);
+        assertEquals(99, resultado); // Alterado para 99 para simular a falha
     }
 
     @Test
